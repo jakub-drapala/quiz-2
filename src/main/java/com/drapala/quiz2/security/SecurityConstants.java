@@ -6,4 +6,5 @@ public class SecurityConstants {
     public static final String HEADER_STRING = "Authorization";
     public static final String TOKEN_SECRET = "&)}6Ggxuf@pYI))";
     public static final String ADMIN_NAME = "admin";
+    public static final String ROLE_ADMIN = "ADMIN";
 }

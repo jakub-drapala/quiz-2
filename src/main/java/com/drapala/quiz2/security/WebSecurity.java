@@ -1,17 +1,18 @@
 package com.drapala.quiz2.security;
 
-import com.drapala.quiz2.model.User;
-import com.drapala.quiz2.service.UserService;
+import com.drapala.quiz2.model.AppUser;
+import com.drapala.quiz2.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.event.EventListener;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
-import java.util.ArrayList;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
@@ -20,16 +21,16 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
             "/login"
     };
 
+    private UserDetailsServiceImpl userDetailsService;
+
     @Autowired
-    UserService userService;
+    public WebSecurity(UserDetailsServiceImpl userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        saveDefaultUser();
-        User admin = userService.getByName(SecurityConstants.ADMIN_NAME);
-        String[] roles = admin.getAuthorities().stream().map(GrantedAuthority::getAuthority).toArray(String[]::new);
-        auth.inMemoryAuthentication()
-                .withUser(admin.getUsername()).password(admin.getPassword()).roles(roles);
+        auth.userDetailsService(userDetailsService);
     }
 
     @Override
@@ -38,7 +39,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers(WHITELIST).permitAll()
-                .antMatchers("/questions/add").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(getAuthenticationFilter())
@@ -53,13 +53,16 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         return filter;
     }
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @EventListener(ApplicationReadyEvent.class)
     private void saveDefaultUser() {
-        if (userService.existsByName(SecurityConstants.ADMIN_NAME)) {
-            return;
+        if (!userDetailsService.existsByName(SecurityConstants.ADMIN_NAME)) {
+            AppUser appUser = new AppUser(SecurityConstants.ADMIN_NAME, passwordEncoder().encode("admin"), SecurityConstants.ROLE_ADMIN);
+            userDetailsService.addUser(appUser);
         }
-        ArrayList<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority("ADMIN"));
-        User user = new User(SecurityConstants.ADMIN_NAME, "{noop}admin", authorities);
-        userService.addUser(user);
     }
 }

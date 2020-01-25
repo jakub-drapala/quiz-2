@@ -1,6 +1,6 @@
 package com.drapala.quiz2.security;
 
-import com.drapala.quiz2.model.User;
+import com.drapala.quiz2.model.AppUser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -17,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.stream.Collectors;
 
@@ -32,14 +33,14 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     public Authentication attemptAuthentication(HttpServletRequest request,
                                                 HttpServletResponse response) throws AuthenticationException {
         try {
-            User credentials = new ObjectMapper()
-                    .readValue(request.getInputStream(), User.class);
+            AppUser credentials = new ObjectMapper()
+                    .readValue(request.getInputStream(), AppUser.class);
 
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             credentials.getUsername(),
                             credentials.getPassword(),
-                            credentials.getAuthorities()
+                            new ArrayList<>()
                     )
             );
         } catch (IOException e) {

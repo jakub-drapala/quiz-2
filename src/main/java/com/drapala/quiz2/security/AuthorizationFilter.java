@@ -1,5 +1,6 @@
 package com.drapala.quiz2.security;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -38,20 +39,13 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
     }
 
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request, String token) {
-        String user = Jwts.parser()
+        Claims claims = Jwts.parser()
                 .setSigningKey(SecurityConstants.TOKEN_SECRET)
                 .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
-
-        List<String> authorities = (ArrayList<String>) Jwts.parser()
-                .setSigningKey(SecurityConstants.TOKEN_SECRET)
-                .parseClaimsJws(token)
-                .getBody()
-                .get("roles");
-
+                .getBody();
+        String user = claims.getSubject();
+        List<String> authorities = (ArrayList<String>) claims.get("roles");
         List<GrantedAuthority> auths = authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
-
         return new UsernamePasswordAuthenticationToken(user, null, auths);
     }
 }
