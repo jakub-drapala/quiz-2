@@ -2,23 +2,20 @@ package com.drapala.quiz2.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.List;
 
-@Entity(name = "questions")
-public class Question {
+@Entity(name = "answers")
+public class Answer {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String content;
+    private boolean isCorrect;
 
-    @OneToMany
-    private List<Answer> answers;
-
-    public Question() {
+    public Answer() {
     }
 
     public long getId() {
@@ -37,11 +34,11 @@ public class Question {
         this.content = content;
     }
 
-    public List<Answer> getAnswers() {
-        return answers;
+    public boolean isCorrect() {
+        return isCorrect;
     }
 
-    public void setAnswers(List<Answer> answers) {
-        this.answers = answers;
+    public void setCorrect(boolean correct) {
+        isCorrect = correct;
     }
 }
