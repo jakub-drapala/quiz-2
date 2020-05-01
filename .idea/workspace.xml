@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c12bd2d7-fdec-448e-9c88-c5fa8660f479" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuizController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/repository/QuizRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/QuizService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/impl/QuizServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/api/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/api/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/api/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/api/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/Quiz2Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/Quiz2Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/controller/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/model/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/model/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/model/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Quiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/repository/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/repository/QuestionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/security/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/security/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/security/AuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/security/AuthorizationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/security/SecurityConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/security/SecurityConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/security/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/security/WebSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/service/AppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/AppUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/QuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/service/impl/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/impl/QuestionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/drapala/quiz2/service/impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/drapala/quiz2/Quiz2ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/drapala/quiz2/Quiz2ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuizController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Quiz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +17,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -75,9 +48,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/web/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/src/app" />
       <recent name="$PROJECT_DIR$/api" />
       <recent name="$PROJECT_DIR$/api/src" />
     </key>
@@ -150,7 +125,8 @@
       <workItem from="1578647166342" duration="599000" />
       <workItem from="1578656185307" duration="4582000" />
       <workItem from="1588316692786" duration="3688000" />
-      <workItem from="1588320516993" duration="3445000" />
+      <workItem from="1588320516993" duration="9077000" />
+      <workItem from="1588341830695" duration="5510000" />
     </task>
     <servers />
   </component>
@@ -174,10 +150,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="610" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588320968081" />
-    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1588323932874">
+    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1588345270590">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588323932874" />
+    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588345270590" />
     <state x="884" y="321" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588320966888">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -186,38 +162,38 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="702" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588319542095" />
-    <state width="1874" height="397" key="GridCell.Tab.0.bottom" timestamp="1588322482733">
+    <state width="1874" height="397" key="GridCell.Tab.0.bottom" timestamp="1588346751844">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="397" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588322482733" />
-    <state width="1874" height="397" key="GridCell.Tab.0.center" timestamp="1588322482733">
+    <state width="1874" height="397" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588346751844" />
+    <state width="1874" height="397" key="GridCell.Tab.0.center" timestamp="1588346751844">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="397" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588322482733" />
-    <state width="1874" height="397" key="GridCell.Tab.0.left" timestamp="1588322482733">
+    <state width="1874" height="397" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588346751844" />
+    <state width="1874" height="397" key="GridCell.Tab.0.left" timestamp="1588346751844">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="397" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588322482733" />
-    <state width="1874" height="397" key="GridCell.Tab.0.right" timestamp="1588322482733">
+    <state width="1874" height="397" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588346751844" />
+    <state width="1874" height="397" key="GridCell.Tab.0.right" timestamp="1588346751844">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="397" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588322482733" />
-    <state width="1874" height="318" key="GridCell.Tab.1.bottom" timestamp="1588321742004">
+    <state width="1874" height="397" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588346751844" />
+    <state width="1874" height="318" key="GridCell.Tab.1.bottom" timestamp="1588330306090">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.1.bottom/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588321742004" />
-    <state width="1874" height="318" key="GridCell.Tab.1.center" timestamp="1588321742004">
+    <state width="1874" height="318" key="GridCell.Tab.1.bottom/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588330306090" />
+    <state width="1874" height="318" key="GridCell.Tab.1.center" timestamp="1588330306090">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.1.center/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588321742004" />
-    <state width="1874" height="318" key="GridCell.Tab.1.left" timestamp="1588321742004">
+    <state width="1874" height="318" key="GridCell.Tab.1.center/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588330306090" />
+    <state width="1874" height="318" key="GridCell.Tab.1.left" timestamp="1588330306090">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.1.left/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588321742004" />
-    <state width="1874" height="318" key="GridCell.Tab.1.right" timestamp="1588321742004">
+    <state width="1874" height="318" key="GridCell.Tab.1.left/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588330306090" />
+    <state width="1874" height="318" key="GridCell.Tab.1.right" timestamp="1588330306090">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.1.right/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588321742004" />
+    <state width="1874" height="318" key="GridCell.Tab.1.right/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588330306090" />
     <state x="443" y="97" width="1024" height="845" key="SettingsEditor" timestamp="1588320920381">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
