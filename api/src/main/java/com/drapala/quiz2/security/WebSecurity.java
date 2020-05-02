@@ -13,7 +13,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.cors.CorsConfiguration;
 
+@CrossOrigin("http://localhost:4200")
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
@@ -21,7 +24,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
             "/login"
     };
 
-    private UserDetailsServiceImpl userDetailsService;
+    private final UserDetailsServiceImpl userDetailsService;
 
     @Autowired
     public WebSecurity(UserDetailsServiceImpl userDetailsService) {
@@ -35,6 +38,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
         http.headers().cacheControl();
         http.csrf().disable()
                 .authorizeRequests()

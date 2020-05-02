@@ -29,7 +29,7 @@ public class AppUser implements UserDetails {
         this.role = role;
     }
 
-    private AppUser() {}
+    protected AppUser() {}
 
     public long getId() {
         return id;
