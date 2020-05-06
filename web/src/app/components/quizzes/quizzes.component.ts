@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {QuizService} from '../../services/quiz.service';
 import {Page} from '../../common/page';
 import {Quiz} from '../../common/quiz';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-quizzes',
@@ -13,15 +12,19 @@ export class QuizzesComponent implements OnInit {
 
   page: Page<Quiz>;
 
-  constructor(private quizService: QuizService) { }
-
-  ngOnInit(): void {
-    this.quizService.getQuizzes().subscribe(data => this.page = data);
-    // this.quizzes();
+  constructor(private quizService: QuizService) {
   }
 
-  quizzes() {
-    // this.quizService.getQuizzes().subscribe(data => console.log(data));
+  ngOnInit(): void {
+    this.fetchData();
+  }
+
+  remove(quizId: number) {
+    this.quizService.removeQuiz(quizId).subscribe(() => this.fetchData());
+  }
+
+  fetchData() {
+    this.quizService.getQuizzes().subscribe(data => this.page = data);
   }
 
 }
