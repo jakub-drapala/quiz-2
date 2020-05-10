@@ -22,4 +22,10 @@ public class QuizServiceImpl implements QuizService {
     public Page<Quiz> get(Pageable pageable) {
         return quizRepository.findAll(pageable);
     }
+
+    @Override
+    public void remove(Long id) {
+        var quiz = quizRepository.findById(id).orElseThrow(() -> new RuntimeException("No found"));
+        quizRepository.delete(quiz);
+    }
 }

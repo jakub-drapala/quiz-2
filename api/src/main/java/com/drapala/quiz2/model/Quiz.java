@@ -1,7 +1,5 @@
 package com.drapala.quiz2.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -9,7 +7,6 @@ import java.util.List;
 public class Quiz {
 
     @Id
-    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 

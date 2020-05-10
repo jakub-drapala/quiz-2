@@ -13,10 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.cors.CorsConfiguration;
 
-@CrossOrigin("http://localhost:4200")
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
@@ -38,12 +35,14 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
         http.headers().cacheControl();
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers(WHITELIST).permitAll()
+                .antMatchers().hasAnyRole(SecurityConstants.ROLE_ADMIN)
                 .anyRequest().authenticated()
+                .and()
+                .cors()
                 .and()
                 .addFilter(getAuthenticationFilter())
                 .addFilter(new AuthorizationFilter(authenticationManager()))
@@ -63,9 +62,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     }
 
     @EventListener(ApplicationReadyEvent.class)
-    private void saveDefaultUser() {
+    public void saveDefaultUser() {
         if (!userDetailsService.existsByName(SecurityConstants.ADMIN_NAME)) {
-            AppUser appUser = new AppUser(SecurityConstants.ADMIN_NAME, passwordEncoder().encode("admin"), SecurityConstants.ROLE_ADMIN);
+            AppUser appUser = new AppUser(SecurityConstants.ADMIN_NAME,
+                    passwordEncoder().encode("admin"),
+                    SecurityConstants.ROLE_ADMIN);
             userDetailsService.addUser(appUser);
         }
     }

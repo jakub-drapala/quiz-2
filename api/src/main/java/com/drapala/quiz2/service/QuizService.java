@@ -7,4 +7,6 @@ import org.springframework.data.domain.Pageable;
 public interface QuizService {
 
     Page<Quiz> get(Pageable pageable);
+
+    void remove(Long id);
 }
