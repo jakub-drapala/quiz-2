@@ -1,5 +1,7 @@
 package com.drapala.quiz2.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,7 +14,8 @@ public class Quiz {
 
     private String title;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "quiz")
     private List<Question> questions;
 
     public Quiz() { }

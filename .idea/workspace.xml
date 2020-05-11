@@ -4,13 +4,10 @@
     <list default="true" id="c12bd2d7-fdec-448e-9c88-c5fa8660f479" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuizController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Quiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/security/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/security/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/security/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/security/WebSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/QuizService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/QuizService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/impl/QuizServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/impl/QuizServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/impl/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/impl/QuestionServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +146,8 @@
       <workItem from="1588934233889" duration="22000" />
       <workItem from="1588941684518" duration="585000" />
       <workItem from="1588943570272" duration="8000" />
-      <workItem from="1589133551729" duration="788000" />
+      <workItem from="1589133551729" duration="5055000" />
+      <workItem from="1589222648317" duration="1938000" />
     </task>
     <servers />
   </component>
@@ -173,10 +171,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="610" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588446753205" />
-    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1588621782512">
+    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1589136592316">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588621782512" />
+    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589136592316" />
     <state x="884" y="321" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588320966888">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -189,42 +187,42 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="702" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588319542095" />
-    <state width="1874" height="308" key="GridCell.Tab.0.bottom" timestamp="1589134344531">
+    <state width="1874" height="318" key="GridCell.Tab.0.bottom" timestamp="1589224051072">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="308" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589134344531" />
+    <state width="1874" height="318" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051072" />
     <state width="1874" height="503" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588514460644" />
-    <state width="1874" height="308" key="GridCell.Tab.0.center" timestamp="1589134344531">
+    <state width="1874" height="318" key="GridCell.Tab.0.center" timestamp="1589224051071">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="308" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589134344531" />
+    <state width="1874" height="318" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051071" />
     <state width="1874" height="503" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588514460644" />
-    <state width="1874" height="308" key="GridCell.Tab.0.left" timestamp="1589134344531">
+    <state width="1874" height="318" key="GridCell.Tab.0.left" timestamp="1589224051071">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="308" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589134344531" />
+    <state width="1874" height="318" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051071" />
     <state width="1874" height="503" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588514460643" />
-    <state width="1874" height="308" key="GridCell.Tab.0.right" timestamp="1589134344531">
+    <state width="1874" height="318" key="GridCell.Tab.0.right" timestamp="1589224051071">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="308" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589134344531" />
+    <state width="1874" height="318" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051071" />
     <state width="1874" height="503" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588514460644" />
-    <state width="1874" height="318" key="GridCell.Tab.1.bottom" timestamp="1588534786831">
+    <state width="1874" height="318" key="GridCell.Tab.1.bottom" timestamp="1589224051072">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.1.bottom/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588534786831" />
-    <state width="1874" height="318" key="GridCell.Tab.1.center" timestamp="1588534786830">
+    <state width="1874" height="318" key="GridCell.Tab.1.bottom/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051072" />
+    <state width="1874" height="318" key="GridCell.Tab.1.center" timestamp="1589224051072">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.1.center/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588534786830" />
-    <state width="1874" height="318" key="GridCell.Tab.1.left" timestamp="1588534786830">
+    <state width="1874" height="318" key="GridCell.Tab.1.center/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051072" />
+    <state width="1874" height="318" key="GridCell.Tab.1.left" timestamp="1589224051072">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.1.left/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588534786830" />
-    <state width="1874" height="318" key="GridCell.Tab.1.right" timestamp="1588534786830">
+    <state width="1874" height="318" key="GridCell.Tab.1.left/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051072" />
+    <state width="1874" height="318" key="GridCell.Tab.1.right" timestamp="1589224051072">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.1.right/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588534786830" />
+    <state width="1874" height="318" key="GridCell.Tab.1.right/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051072" />
     <state width="1874" height="318" key="GridCell.Tab.2.bottom" timestamp="1588534786831">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -289,11 +287,6 @@
           <url>file://$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/security/AuthenticationFilter.java</url>
           <line>57</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuizController.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/web/src/app/services/quiz.service.ts</url>

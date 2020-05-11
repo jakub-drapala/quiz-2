@@ -4,5 +4,5 @@ import com.drapala.quiz2.model.Question;
 
 public interface QuestionService {
 
-    Question addQuestion(Question question);
+    Question addQuestion(Question question, Long quizId);
 }
