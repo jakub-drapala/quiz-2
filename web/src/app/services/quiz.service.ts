@@ -19,7 +19,6 @@ export class QuizService {
   }
 
   removeQuiz(id: number): Observable<any> {
-    console.log(`Hello service; id: ${id}`);
     return this.httpClient.delete(this.baseUrl + `/${id}`, {responseType: 'json'});
   }
 }

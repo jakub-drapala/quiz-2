@@ -1,6 +1,6 @@
 <div class="list-group list-group-flush" *ngFor="let quiz of page.content">
   <div class="row" style="width: 50%; margin-left: auto; margin-right: auto">
-    <a href="#" class="list-group-item list-group-item-action col-sm-10">{{ quiz.title }}</a>
+    <a [title]="" [routerLink]="['/quizzes', quiz.id]" class="list-group-item list-group-item-action col-sm-10">{{ quiz.title }}</a>
     <button type="button" class="close col-sm-2" aria-label="Close" (click)="remove(quiz.id)">
       <span aria-hidden="true">&times;</span>
     </button>

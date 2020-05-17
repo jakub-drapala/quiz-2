@@ -3,11 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c12bd2d7-fdec-448e-9c88-c5fa8660f479" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/controller/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/model/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/repository/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/repository/QuestionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/QuestionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/impl/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/service/impl/QuestionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/components/quizzes/quizzes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/components/quizzes/quizzes.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/components/quizzes/quizzes.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/http-interceptors/auth-interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/http-interceptors/auth-interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/services/quiz.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/services/quiz.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/services/quiz.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +155,14 @@
       <workItem from="1588941684518" duration="585000" />
       <workItem from="1588943570272" duration="8000" />
       <workItem from="1589133551729" duration="5055000" />
-      <workItem from="1589222648317" duration="1938000" />
+      <workItem from="1589222648317" duration="2583000" />
+      <workItem from="1589261962296" duration="78000" />
+      <workItem from="1589374239705" duration="8000" />
+      <workItem from="1589398841671" duration="1996000" />
+      <workItem from="1589433400498" duration="389000" />
+      <workItem from="1589649116661" duration="1895000" />
+      <workItem from="1589659817545" duration="474000" />
+      <workItem from="1589712917533" duration="4242000" />
     </task>
     <servers />
   </component>
@@ -171,10 +186,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="610" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588446753205" />
-    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1589136592316">
+    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1589718098819">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589136592316" />
+    <state x="768" y="239" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589718098819" />
     <state x="884" y="321" width="525" height="416" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588320966888">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -187,25 +202,25 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="702" y="263" width="495" height="513" key="FileChooserDialogImpl/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588319542095" />
-    <state width="1874" height="318" key="GridCell.Tab.0.bottom" timestamp="1589224051072">
+    <state width="1874" height="484" key="GridCell.Tab.0.bottom" timestamp="1589719083333">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051072" />
+    <state width="1874" height="484" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589719083333" />
     <state width="1874" height="503" key="GridCell.Tab.0.bottom/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588514460644" />
-    <state width="1874" height="318" key="GridCell.Tab.0.center" timestamp="1589224051071">
+    <state width="1874" height="484" key="GridCell.Tab.0.center" timestamp="1589719083333">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051071" />
+    <state width="1874" height="484" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589719083333" />
     <state width="1874" height="503" key="GridCell.Tab.0.center/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588514460644" />
-    <state width="1874" height="318" key="GridCell.Tab.0.left" timestamp="1589224051071">
+    <state width="1874" height="484" key="GridCell.Tab.0.left" timestamp="1589719083333">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051071" />
+    <state width="1874" height="484" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589719083333" />
     <state width="1874" height="503" key="GridCell.Tab.0.left/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588514460643" />
-    <state width="1874" height="318" key="GridCell.Tab.0.right" timestamp="1589224051071">
+    <state width="1874" height="484" key="GridCell.Tab.0.right" timestamp="1589719083333">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="318" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224051071" />
+    <state width="1874" height="484" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589719083333" />
     <state width="1874" height="503" key="GridCell.Tab.0.right/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588514460644" />
     <state width="1874" height="318" key="GridCell.Tab.1.bottom" timestamp="1589224051072">
       <screen x="0" y="27" width="1920" height="988" />
@@ -243,14 +258,18 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="443" y="97" width="1024" height="845" key="SettingsEditor/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589133887990" />
-    <state x="651" y="259" width="1092" height="568" key="find.popup" timestamp="1588621964450">
+    <state x="100" y="125" width="1720" height="790" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1589660278939">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="651" y="259" width="1092" height="568" key="find.popup/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588621964450" />
-    <state x="269" y="246" width="1372" height="547" key="new project wizard" timestamp="1588320554004">
+    <state x="100" y="125" width="1720" height="790" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589660278939" />
+    <state x="651" y="259" width="1092" height="568" key="find.popup" timestamp="1589224894555">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="269" y="246" width="1372" height="547" key="new project wizard/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1588320554004" />
+    <state x="651" y="259" width="1092" height="568" key="find.popup/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589224894555" />
+    <state x="269" y="246" width="1372" height="547" key="new project wizard" timestamp="1589651008521">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="269" y="246" width="1372" height="547" key="new project wizard/0.27.1920.988/1920.0.1920.1080@0.27.1920.988" timestamp="1589651008521" />
     <state x="623" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1588622276750">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -287,11 +306,6 @@
           <url>file://$PROJECT_DIR$/api/src/main/java/com/drapala/quiz2/security/AuthenticationFilter.java</url>
           <line>57</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/web/src/app/services/quiz.service.ts</url>
-          <line>21</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

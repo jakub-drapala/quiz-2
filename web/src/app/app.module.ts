@@ -5,15 +5,25 @@ import { AppComponent } from './app.component';
 import { QuizzesComponent } from './components/quizzes/quizzes.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './http-interceptors/auth-interceptor';
+import {RouterModule} from '@angular/router';
+import {QuestionsComponent} from './components/questions/questions.component';
+
+const appRoute = [
+  { path: '', redirectTo: 'quizzes', pathMatch: 'full' },
+  { path: 'quizzes', component: QuizzesComponent },
+  { path: 'quizzes/:quizId', component: QuestionsComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuizzesComponent
+    QuizzesComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

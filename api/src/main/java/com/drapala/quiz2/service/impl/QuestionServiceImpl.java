@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class QuestionServiceImpl implements QuestionService {
 
@@ -20,10 +22,15 @@ public class QuestionServiceImpl implements QuestionService {
         this.quizRepository = quizRepository;
     }
 
+    @Override
+    public List<Question> get(long id) {
+        return questionRepository.findAllByQuiz_Id(id);
+    }
+
     @Transactional
     @Override
     public Question addQuestion(Question question, Long quizId) {
-        var quiz = quizRepository.findById(quizId).orElseThrow(() -> new RuntimeException("Resource not found exception"));
+        var quiz = quizRepository.findById(quizId).orElseThrow(() -> new IllegalStateException("Quiz not found"));
         question.setQuiz(quiz);
         return questionRepository.save(question);
     }

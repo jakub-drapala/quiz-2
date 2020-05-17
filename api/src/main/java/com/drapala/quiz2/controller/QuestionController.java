@@ -8,9 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.RolesAllowed;
+import java.util.List;
 
 @RestController
-@RequestMapping("/quizzes")
+@RequestMapping("/quizzes//{quizId}/questions")
 public class QuestionController {
 
     private final QuestionService service;
@@ -20,8 +21,13 @@ public class QuestionController {
         this.service = questionService;
     }
 
-    @PostMapping("/{quizId}")
-    public Question addQuestion(@RequestBody Question question, @PathVariable Long quizId) {
+    @GetMapping
+    public List<Question> get(@PathVariable Long quizId) {
+        return service.get(quizId);
+    }
+
+    @PostMapping
+    public Question add(@RequestBody Question question, @PathVariable Long quizId) {
         return service.addQuestion(question, quizId);
     }
 }
