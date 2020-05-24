@@ -1,2 +1,15 @@
-<p>questions works!</p>
-{{data  | json}}
+<mat-selection-list  [multiple]="false">
+  <mat-list-option *ngFor="let content of questionPage.content">
+    {{ content.content }}
+  </mat-list-option>
+</mat-selection-list>
+
+<form (ngSubmit)="addQuestion(content.value)">
+  <div style="display: inline-block;">
+    <label for="questionsContent">Treść pytania</label>
+    <input #content type="text" id="questionsContent" name="questionsContent">
+    <button type="submit">Dodaj</button>
+  </div>
+</form>
+
+

@@ -1,12 +1,12 @@
 package com.drapala.quiz2.service;
 
 import com.drapala.quiz2.model.Question;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface QuestionService {
 
-    List<Question> get(long id);
+    Page<Question> get(long id, Pageable page);
 
     Question addQuestion(Question question, Long quizId);
 }

@@ -5,10 +5,10 @@ import com.drapala.quiz2.repository.QuestionRepository;
 import com.drapala.quiz2.repository.QuizRepository;
 import com.drapala.quiz2.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 public class QuestionServiceImpl implements QuestionService {
@@ -23,8 +23,8 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<Question> get(long id) {
-        return questionRepository.findAllByQuiz_Id(id);
+    public Page<Question> get(long id, Pageable page) {
+        return questionRepository.findAllByQuiz_Id(id, page);
     }
 
     @Transactional
