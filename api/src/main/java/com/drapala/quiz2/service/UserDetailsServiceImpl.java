@@ -1,4 +1,4 @@
-package com.drapala.quiz2.service.impl;
+package com.drapala.quiz2.service;
 
 import com.drapala.quiz2.model.AppUser;
 import com.drapala.quiz2.repository.UserRepository;

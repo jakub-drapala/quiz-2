@@ -3,10 +3,11 @@ package com.drapala.quiz2.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity(name = "quizzes")
-public class Quiz {
+public class Quiz implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

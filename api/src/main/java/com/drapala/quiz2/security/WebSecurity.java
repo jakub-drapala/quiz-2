@@ -1,7 +1,7 @@
 package com.drapala.quiz2.security;
 
 import com.drapala.quiz2.model.AppUser;
-import com.drapala.quiz2.service.impl.UserDetailsServiceImpl;
+import com.drapala.quiz2.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +18,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     private final String[] WHITELIST = {
-            "/login"
+            "/login",
+            "/quizzes"
     };
 
     private final UserDetailsServiceImpl userDetailsService;

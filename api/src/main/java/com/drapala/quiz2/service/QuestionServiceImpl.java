@@ -1,4 +1,4 @@
-package com.drapala.quiz2.service.impl;
+package com.drapala.quiz2.service;
 
 import com.drapala.quiz2.model.Question;
 import com.drapala.quiz2.repository.QuestionRepository;
@@ -33,5 +33,9 @@ public class QuestionServiceImpl implements QuestionService {
         var quiz = quizRepository.findById(quizId).orElseThrow(() -> new IllegalStateException("Quiz not found"));
         question.setQuiz(quiz);
         return questionRepository.save(question);
+    }
+
+    public String hello() {
+        return "Hello world";
     }
 }

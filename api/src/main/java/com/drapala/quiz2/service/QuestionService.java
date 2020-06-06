@@ -9,4 +9,6 @@ public interface QuestionService {
     Page<Question> get(long id, Pageable page);
 
     Question addQuestion(Question question, Long quizId);
+
+    String hello();
 }
