@@ -3,7 +3,6 @@ package com.drapala.quiz2.service;
 import com.drapala.quiz2.model.Question;
 import com.drapala.quiz2.repository.QuestionRepository;
 import com.drapala.quiz2.repository.QuizRepository;
-import com.drapala.quiz2.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,9 +32,5 @@ public class QuestionServiceImpl implements QuestionService {
         var quiz = quizRepository.findById(quizId).orElseThrow(() -> new IllegalStateException("Quiz not found"));
         question.setQuiz(quiz);
         return questionRepository.save(question);
-    }
-
-    public String hello() {
-        return "Hello world";
     }
 }
