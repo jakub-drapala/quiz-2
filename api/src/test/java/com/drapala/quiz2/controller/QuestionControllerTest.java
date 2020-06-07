@@ -1,9 +1,9 @@
 package com.drapala.quiz2.controller;
 
+import com.drapala.quiz2.BaseControllerTest;
 import com.drapala.quiz2.model.Question;
 import com.drapala.quiz2.service.QuestionService;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.drapala.quiz2.testData.QuestionProvider;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,17 +12,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.method.support.HandlerMethodArgumentResolver;
-
-import java.util.List;
 
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
@@ -32,13 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(MockitoJUnitRunner.class)
-public class QuestionControllerTest {
-
-    private ObjectMapper jsonMapper = new ObjectMapper();
-
-    private PageableHandlerMethodArgumentResolver pageableArgumentResolver = new PageableHandlerMethodArgumentResolver();
-
-    private MockMvc api;
+public class QuestionControllerTest extends BaseControllerTest {
 
     @Mock
     private QuestionService questionService;
@@ -46,41 +31,29 @@ public class QuestionControllerTest {
     @InjectMocks
     QuestionController questionController;
 
-
-    private String json(Object object) throws JsonProcessingException {
-        return jsonMapper.writeValueAsString(object);
-    }
-
     @Before
     public void init() {
-        api = MockMvcBuilders.standaloneSetup(questionController)
-                .setCustomArgumentResolvers(new HandlerMethodArgumentResolver[]{pageableArgumentResolver})
-                .build();
+    }
+
+    @Override
+    protected Object controller() {
+        return questionController;
     }
 
     @Test
     public void getTest() throws Exception {
-        Question question = new Question();
-        question.setId(1L);
-        question.setContent("Content 1");
-        Page<Question> page = new PageImpl<>(List.of(question));
-
-        when(questionService.get(eq(1L), any(Pageable.class))).thenReturn(page);
-
+        when(questionService.get(eq(1L), any(Pageable.class))).thenReturn(QuestionProvider.getPage());
         api.perform(get("/quizzes/{quizId}/questions", 1L).accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.totalElements", Matchers.is(2)))
+                .andExpect(jsonPath("$.content[1].content", Matchers.is("Content 2")));
         Mockito.verify(questionService).get(anyLong(), any(Pageable.class));
     }
 
     @Test
     public void addTest() throws Exception {
-        Question question = new Question();
-        question.setId(1L);
-        question.setContent("Content 1");
-
+        Question question = QuestionProvider.get();
         String json = json(question);
-
         when(questionService.addQuestion(any(Question.class), eq(1L))).thenReturn(question);
         api.perform(post("/quizzes/{quizId}/questions", 1L).contentType(MediaType.APPLICATION_JSON)
                 .content(json))
