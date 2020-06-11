@@ -29,7 +29,7 @@ public class QuestionControllerTest extends BaseControllerTest {
     private QuestionService questionService;
 
     @InjectMocks
-    QuestionController questionController;
+    private QuestionController questionController;
 
     @Before
     public void init() {
@@ -54,12 +54,12 @@ public class QuestionControllerTest extends BaseControllerTest {
     public void addTest() throws Exception {
         Question question = QuestionProvider.get();
         String json = json(question);
-        when(questionService.addQuestion(any(Question.class), eq(1L))).thenReturn(question);
+        when(questionService.add(any(Question.class), eq(1L))).thenReturn(question);
         api.perform(post("/quizzes/{quizId}/questions", 1L).contentType(MediaType.APPLICATION_JSON)
                 .content(json))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.content", Matchers.is("Content 1")));
-        Mockito.verify(questionService).addQuestion(any(Question.class), eq(1L));
+        Mockito.verify(questionService).add(any(Question.class), eq(1L));
 
     }
 }

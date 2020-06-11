@@ -1,5 +1,6 @@
 package com.drapala.quiz2.service;
 
+import com.drapala.quiz2.exceptions.ResourceNotFoundException;
 import com.drapala.quiz2.model.Question;
 import com.drapala.quiz2.repository.QuestionRepository;
 import com.drapala.quiz2.repository.QuizRepository;
@@ -8,6 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import static com.drapala.quiz2.exceptions.ResourceNotFoundException.QUIZ_NOT_FOUND;
 
 @Service
 public class QuestionServiceImpl implements QuestionService {
@@ -28,8 +31,8 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Transactional
     @Override
-    public Question addQuestion(Question question, Long quizId) {
-        var quiz = quizRepository.findById(quizId).orElseThrow(() -> new IllegalStateException("Quiz not found"));
+    public Question add(Question question, Long quizId) {
+        var quiz = quizRepository.findById(quizId).orElseThrow(() -> new ResourceNotFoundException(QUIZ_NOT_FOUND));
         question.setQuiz(quiz);
         return questionRepository.save(question);
     }

@@ -28,6 +28,6 @@ public class QuestionController {
     @PostMapping("/{quizId}/questions")
     @ResponseStatus(HttpStatus.CREATED)
     public Question add(@RequestBody Question question, @PathVariable Long quizId) {
-        return service.addQuestion(question, quizId);
+        return service.add(question, quizId);
     }
 }
