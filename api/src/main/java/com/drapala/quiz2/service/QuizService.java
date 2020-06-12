@@ -9,4 +9,6 @@ public interface QuizService {
     Page<Quiz> get(Pageable pageable);
 
     void remove(Long id);
+
+    Quiz updateTitle(Long quizId, String newTitle);
 }

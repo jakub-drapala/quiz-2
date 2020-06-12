@@ -63,4 +63,23 @@ public class QuizServiceImplTest {
         verify(quizRepository, times(1)).findById(anyLong());
         verify(quizRepository, times(1)).delete(any(Quiz.class));
     }
+
+    @Test
+    public void updateTitleTest() {
+        Quiz quiz = QuizProvider.get();
+        String newTitle = "Updated title";
+        when(quizRepository.findById(anyLong())).thenReturn(Optional.of(quiz));
+        quiz.setTitle(newTitle);
+        when(quizRepository.save(any(Quiz.class))).thenReturn(quiz);
+        assertEquals(quizService.updateTitle(1L, newTitle).getTitle(), newTitle);
+        verify(quizRepository, times(1)).findById(anyLong());
+        verify(quizRepository, times(1)).save(any(Quiz.class));
+    }
+
+    @Test
+    public void updateExceptionTest() {
+        when(quizRepository.findById(anyLong())).thenReturn(Optional.empty());
+        assertThatThrownBy(() -> quizService.remove(1L)).hasMessage(ResourceNotFoundException.QUIZ_NOT_FOUND);
+        verify(quizRepository, times(1)).findById(anyLong());
+    }
 }

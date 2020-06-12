@@ -30,4 +30,11 @@ public class QuizServiceImpl implements QuizService {
         var quiz = quizRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(QUIZ_NOT_FOUND));
         quizRepository.delete(quiz);
     }
+
+    @Override
+    public Quiz updateTitle(Long quizId, String newTitle) {
+        var quiz = quizRepository.findById(quizId).orElseThrow(() -> new ResourceNotFoundException(QUIZ_NOT_FOUND));
+        quiz.setTitle(newTitle);
+        return quizRepository.save(quiz);
+    }
 }

@@ -1,12 +1,10 @@
 package com.drapala.quiz2.controller;
 
 import com.drapala.quiz2.model.Quiz;
+import com.drapala.quiz2.request.SingleValueRequest;
 import com.drapala.quiz2.service.QuizService;
-import jdk.jfr.ContentType;
-import org.hibernate.validator.internal.util.Contracts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -32,5 +30,10 @@ public class QuizController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void remove(@PathVariable Long id) {
         quizService.remove(id);
+    }
+
+    @PutMapping("/{id}/title")
+    public Quiz updateTitle(@PathVariable Long id, @RequestBody SingleValueRequest<String> title) {
+        return quizService.updateTitle(id, title.get());
     }
 }
