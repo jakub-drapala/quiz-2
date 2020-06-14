@@ -21,4 +21,8 @@ export class QuizService {
   removeQuiz(id: number): Observable<any> {
     return this.httpClient.delete(this.baseUrl + `/${id}`, {responseType: 'json'});
   }
+
+  updateQuizName(id: number, newName: string) {
+    return this.httpClient.put(this.baseUrl + `/${id}/title`, { value: newName } );
+  }
 }

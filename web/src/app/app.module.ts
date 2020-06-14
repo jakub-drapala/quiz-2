@@ -10,22 +10,20 @@ import {QuestionsComponent} from './components/questions/questions.component';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
-import { TablesComponent } from './components/tables/tables.component';
-import {MatListModule} from "@angular/material/list";
+import {MatListModule} from '@angular/material/list';
+import {QuizParamsService} from './components/communication/quiz-params.service';
 
 const appRoute = [
   { path: '', redirectTo: 'quizzes', pathMatch: 'full' },
   { path: 'quizzes', component: QuizzesComponent },
-  { path: 'quizzes/:quizId', component: QuestionsComponent },
-  { path: 'table', component: TablesComponent }
+  { path: 'quizzes/:quizId', component: QuestionsComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     QuizzesComponent,
-    QuestionsComponent,
-    TablesComponent
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +35,8 @@ const appRoute = [
     MatListModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    QuizParamsService
   ],
   bootstrap: [AppComponent]
 })
