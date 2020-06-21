@@ -1,9 +1,6 @@
 package com.drapala.quiz2.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "answers")
 public class Answer {
@@ -14,6 +11,9 @@ public class Answer {
 
     private String content;
     private boolean isCorrect;
+
+    @ManyToOne
+    private Question question;
 
     public Answer() {
     }
@@ -40,5 +40,13 @@ public class Answer {
 
     public void setCorrect(boolean correct) {
         isCorrect = correct;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 }

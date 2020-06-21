@@ -21,7 +21,8 @@ public class Question {
     @ManyToOne
     private Quiz quiz;
 
-    @OneToMany
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "question")
     private List<Answer> answers;
 
     public Question() {

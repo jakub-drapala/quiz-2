@@ -1,7 +1,7 @@
 package com.drapala.quiz2.security;
 
 import com.drapala.quiz2.model.AppUser;
-import com.drapala.quiz2.service.UserDetailsServiceImpl;
+import com.drapala.quiz2.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;

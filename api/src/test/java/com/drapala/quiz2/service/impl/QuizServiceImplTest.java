@@ -1,9 +1,10 @@
-package com.drapala.quiz2.service;
+package com.drapala.quiz2.service.impl;
 
 import com.drapala.quiz2.Quiz2Application;
 import com.drapala.quiz2.exceptions.ResourceNotFoundException;
 import com.drapala.quiz2.model.Quiz;
 import com.drapala.quiz2.repository.QuizRepository;
+import com.drapala.quiz2.service.impl.QuizServiceImpl;
 import com.drapala.quiz2.testData.QuizProvider;
 import org.junit.Test;
 import org.junit.runner.RunWith;

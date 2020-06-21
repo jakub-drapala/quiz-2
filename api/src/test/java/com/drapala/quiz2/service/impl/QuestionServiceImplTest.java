@@ -1,9 +1,10 @@
-package com.drapala.quiz2.service;
+package com.drapala.quiz2.service.impl;
 
 import com.drapala.quiz2.Quiz2Application;
 import com.drapala.quiz2.model.Question;
 import com.drapala.quiz2.repository.QuestionRepository;
 import com.drapala.quiz2.repository.QuizRepository;
+import com.drapala.quiz2.service.impl.QuestionServiceImpl;
 import com.drapala.quiz2.testData.QuestionProvider;
 import com.drapala.quiz2.testData.QuizProvider;
 import org.junit.Test;

@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/quizzes")
+@RequestMapping("/quizzes/{quizId}")
 public class QuestionController {
 
     private final QuestionService service;
@@ -20,12 +20,12 @@ public class QuestionController {
         this.service = questionService;
     }
 
-    @GetMapping("/{quizId}/questions")
+    @GetMapping("/questions")
     public Page<Question> get(@PathVariable Long quizId, @PageableDefault Pageable page) {
         return service.get(quizId, page);
     }
 
-    @PostMapping("/{quizId}/questions")
+    @PostMapping("/questions")
     @ResponseStatus(HttpStatus.CREATED)
     public Question add(@RequestBody Question question, @PathVariable Long quizId) {
         return service.add(question, quizId);
