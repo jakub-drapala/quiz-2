@@ -1,7 +1,5 @@
-<form (ngSubmit)="updateQuizName(quizId, quizTitleInput.value)">
-  <input #quizTitleInput [value]="quizTitle">
-  <button type="submit">Zmień nazwę</button>
-</form>
+<span> {{ quizTitle }}</span>
+<button mat-raised-button (click)="openDialog()">Zmień nazwę</button>
 
 <mat-selection-list  [multiple]="false">
   <mat-list-option *ngFor="let content of questionPage.content">

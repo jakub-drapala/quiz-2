@@ -6,6 +6,8 @@ import {Question} from '../../common/question';
 import {Page} from '../../common/page';
 import {QuizParamsService} from '../communication/quiz-params.service';
 import {QuizService} from '../../services/quiz.service';
+import {MatDialog} from '@angular/material/dialog';
+import {QuestionChangeNameDialogComponent} from './question-change-name-dialog/question-change-name-dialog.component';
 
 @Component({
   selector: 'app-questions',
@@ -21,7 +23,8 @@ export class QuestionsComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private quizService: QuizService,
               private questionService: QuestionService,
-              private quizParamsService: QuizParamsService
+              private quizParamsService: QuizParamsService,
+              private dialog: MatDialog
               ) { }
 
   ngOnInit(): void {
@@ -42,7 +45,19 @@ export class QuestionsComponent implements OnInit {
     this.questionService.saveQuestion(this.quizId, content).subscribe(() => this.fetchData());
   }
 
-  updateQuizName(quizId: number, newName: string) {
-    this.quizService.updateQuizName(quizId, newName).subscribe();
+  openDialog(): void {
+    const dialogRef = this.dialog.open(QuestionChangeNameDialogComponent, {
+      width: '250px',
+      data: {
+        id: this.quizId,
+        title: this.quizTitle
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log(result);
+        this.quizTitle = result.title;
+      }
+    });
   }
 }

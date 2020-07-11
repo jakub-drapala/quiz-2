@@ -10,7 +10,7 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const authToken = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5MjkwNDM1OSwicm9sZXMiOlsiQURNSU4iXX0.jZkGodMxV7mbbYzKpH9gLb_bhire5a2GOaH8YYoIgHh1d-xKDLe_LjqcPDYIViQl0cZS44OYtUEPMmMMy6EU8Q';
+    const authToken = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NTMzMzIwNywicm9sZXMiOlsiQURNSU4iXX0.ENGUGLINO12gMLzYEl7WPq_46BYvUPWZCT_28arDQ-N0O6WbuB_0x9o5lJj_5WvwSkEb3l0VPYdW3mHB8c_Flg';
     const authReq = req.clone({ setHeaders: { Authorization: authToken }, responseType: 'json' });
     return next.handle(authReq);
   }

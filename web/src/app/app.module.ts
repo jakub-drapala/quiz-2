@@ -12,6 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
 import {QuizParamsService} from './components/communication/quiz-params.service';
+import {MatButtonModule} from '@angular/material/button';
+import { QuestionChangeNameDialogComponent } from './components/questions/question-change-name-dialog/question-change-name-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const appRoute = [
   { path: '', redirectTo: 'quizzes', pathMatch: 'full' },
@@ -23,7 +26,8 @@ const appRoute = [
   declarations: [
     AppComponent,
     QuizzesComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    QuestionChangeNameDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ const appRoute = [
     FormsModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

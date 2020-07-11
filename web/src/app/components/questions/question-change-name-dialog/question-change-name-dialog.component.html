@@ -1,0 +1,10 @@
+<div mat-dialog-content style="background: #F5F5F5">
+  <h4 style="text-align: center; font-weight: 500;">Zmień nazwę</h4>
+  <form>
+    <input type="text" [value]="data.title" #title placeholder="Podaj nazwę">
+    <div mat-dialog-actions class="row justify-content-around">
+      <button (click)="submitForm(title.value, true)" type="submit" mat-raised-button color="primary">Wyślij</button>
+      <button (click)="submitForm(title.value, false)" mat-stroked-button color="accent">Anuluj</button>
+    </div>
+  </form>
+</div>

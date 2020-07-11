@@ -1,0 +1,14 @@
+.mat-dialog-content {
+  overflow: unset;
+}
+
+.close-dialog {
+  cursor: pointer;
+}
+
+::ng-deep .mat-dialog-container {
+  background: #F5F5F5;
+}
+
+
+
