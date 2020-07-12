@@ -13,8 +13,11 @@ import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
 import {QuizParamsService} from './components/communication/quiz-params.service';
 import {MatButtonModule} from '@angular/material/button';
+// tslint:disable-next-line:max-line-length
 import { QuestionChangeNameDialogComponent } from './components/questions/question-change-name-dialog/question-change-name-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ToastrModule } from 'ngx-toastr';
+import {CommonModule} from '@angular/common';
 
 const appRoute = [
   { path: '', redirectTo: 'quizzes', pathMatch: 'full' },
@@ -38,7 +41,9 @@ const appRoute = [
     MatTableModule,
     MatListModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    CommonModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
