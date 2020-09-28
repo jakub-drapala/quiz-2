@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {QuizService} from '../../services/quiz.service';
-import {Page} from '../../common/page';
-import {Quiz} from '../../common/quiz';
+import {Page} from '../../common/model/page';
+import {Quiz} from '../../common/model/quiz';
 import {QuizParamsService} from '../communication/quiz-params.service';
 
 @Component({

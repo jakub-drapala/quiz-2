@@ -1,4 +1,4 @@
-export class Quiz {
+export interface Quiz {
   id: number;
   title: string;
 }

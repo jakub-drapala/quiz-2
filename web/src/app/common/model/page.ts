@@ -1,4 +1,4 @@
-export class Page<T> {
+export interface Page<T> {
   content: Array<T>;
   pageable: any;
   totalPages: number;
