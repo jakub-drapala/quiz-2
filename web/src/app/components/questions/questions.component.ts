@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {QuestionService} from '../../services/question.service';
 import {switchMap} from 'rxjs/operators';
 import {Question} from '../../common/model/question';
@@ -8,13 +8,14 @@ import {QuizParamsService} from '../communication/quiz-params.service';
 import {QuizService} from '../../services/quiz.service';
 import {MatDialog} from '@angular/material/dialog';
 import {QuestionChangeNameDialogComponent} from './question-change-name-dialog/question-change-name-dialog.component';
+import {AbstractAdminComponent} from '../../abstract/abstract-admin.component';
 
 @Component({
   selector: 'app-questions',
   templateUrl: './questions.component.html',
   styleUrls: ['./questions.component.css']
 })
-export class QuestionsComponent implements OnInit {
+export class QuestionsComponent extends AbstractAdminComponent {
 
   questionPage: Page<Question>;
   quizId: number;
@@ -24,10 +25,15 @@ export class QuestionsComponent implements OnInit {
               private quizService: QuizService,
               private questionService: QuestionService,
               private quizParamsService: QuizParamsService,
-              private dialog: MatDialog
-              ) { }
+              private dialog: MatDialog,
+              protected router: Router
+              ) {
+    super(router);
+  }
 
+  // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit(): void {
+    super.ngOnInit();
     this.route.paramMap.pipe(
       switchMap(params => {
         this.quizId = +params.get('quizId');
@@ -55,7 +61,6 @@ export class QuestionsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log(result);
         this.quizTitle = result.title;
       }
     });

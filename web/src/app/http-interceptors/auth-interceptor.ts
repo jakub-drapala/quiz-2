@@ -10,9 +10,13 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // const authToken = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5NTMzMzIwNywicm9sZXMiOlsiQURNSU4iXX0.ENGUGLINO12gMLzYEl7WPq_46BYvUPWZCT_28arDQ-N0O6WbuB_0x9o5lJj_5WvwSkEb3l0VPYdW3mHB8c_Flg';
-    // const authReq = req.clone({ setHeaders: { Authorization: authToken }, responseType: 'json' });
-    const authReq = req.clone({ responseType: 'json', setHeaders: {} });
+    let authReq: HttpRequest<any>;
+    if (sessionStorage.getItem('token')) {
+      const authToken = sessionStorage.getItem('token');
+      authReq = req.clone({ setHeaders: { Authorization: authToken }, responseType: 'json' });
+    } else {
+      authReq = req.clone({ responseType: 'json', setHeaders: {} });
+    }
     return next.handle(authReq);
   }
 }

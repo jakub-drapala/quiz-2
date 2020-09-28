@@ -65,7 +65,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write(
-                "{\"" + SecurityConstants.HEADER_STRING + "\":\"" + token + "\"}"
+                "{\"" + "token" + "\":\"" + token + "\"}"
         );
     }
 }

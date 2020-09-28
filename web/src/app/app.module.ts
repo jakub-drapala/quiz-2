@@ -23,9 +23,9 @@ import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './components/login/login.component';
 
 const appRoute = [
-  { path: '', redirectTo: 'quizzes', pathMatch: 'full' },
-  { path: 'quizzes', component: QuizzesComponent },
-  { path: 'quizzes/:quizId', component: QuestionsComponent },
+  { path: '', redirectTo: 'admin/quizzes', pathMatch: 'full' },
+  { path: 'admin/quizzes', component: QuizzesComponent },
+  { path: 'admin/quizzes/:quizId', component: QuestionsComponent },
   { path: 'login', component: LoginComponent }
 ];
 
