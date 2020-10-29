@@ -6,7 +6,6 @@ import com.drapala.quiz2.testData.AnswerProvider;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -37,11 +36,11 @@ public class AnswerControllerTest extends BaseControllerTest {
 
     @Test
     public void getByQuestionIdTest() throws Exception {
-        when(answerService.getByQuestionId(anyLong(), any(Pageable.class))).thenReturn(AnswerProvider.getPage());
+        when(answerService.getByQuestionId(anyLong())).thenReturn(AnswerProvider.getAnswers());
         api.perform(get("/quizzes/{quizId}/questions/{questionId}/answers", 1L, 2L))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.totalElements", Matchers.is(1)))
                 .andExpect(jsonPath("$.content[0].content", Matchers.is("Content 1")));
-        Mockito.verify(answerService, times(1)).getByQuestionId(anyLong(), any(Pageable.class));
+        Mockito.verify(answerService, times(1)).getByQuestionId(anyLong());
     }
 }

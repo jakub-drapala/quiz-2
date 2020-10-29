@@ -9,6 +9,8 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/quizzes/{quizId}")
 public class QuestionController {
@@ -27,7 +29,7 @@ public class QuestionController {
 
     @PostMapping("/questions")
     @ResponseStatus(HttpStatus.CREATED)
-    public Question add(@RequestBody Question question, @PathVariable Long quizId) {
+    public Question add(@RequestBody @Valid Question question, @PathVariable Long quizId) {
         return service.add(question, quizId);
     }
 }

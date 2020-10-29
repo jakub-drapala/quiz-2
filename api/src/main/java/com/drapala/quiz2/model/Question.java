@@ -3,7 +3,7 @@ package com.drapala.quiz2.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity(name = "questions")
@@ -13,11 +13,11 @@ public class Question {
     @GeneratedValue
     private long id;
 
+    @NotBlank
     @Column(nullable = false)
     private String content;
 
     @JsonIgnore
-    @NotNull
     @ManyToOne
     private Quiz quiz;
 

@@ -8,9 +8,9 @@
     </div>
   </div>
 
-  <mat-selection-list  [multiple]="false">
-    <mat-list-option *ngFor="let content of questionPage.content">
-      {{ content.content }}
+  <mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let question of questionPage.content" (click)="fetchAnswers(question.id)">
+      {{ question.content }}
     </mat-list-option>
   </mat-selection-list>
 
@@ -25,5 +25,8 @@
       </div>
     </div>
   </form>
+  <ul *ngFor="let answer of answers">
+    <li>{{ answer.content }}</li>
+  </ul>
 </div>
 

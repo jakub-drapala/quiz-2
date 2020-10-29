@@ -9,6 +9,8 @@ import {QuizService} from '../../services/quiz.service';
 import {MatDialog} from '@angular/material/dialog';
 import {QuestionChangeNameDialogComponent} from './question-change-name-dialog/question-change-name-dialog.component';
 import {AbstractAdminComponent} from '../../abstract/abstract-admin.component';
+import {AnswerService} from '../../services/answer.service';
+import {Answer} from '../../common/model/answer';
 
 @Component({
   selector: 'app-questions',
@@ -20,11 +22,13 @@ export class QuestionsComponent extends AbstractAdminComponent {
   questionPage: Page<Question>;
   quizId: number;
   quizTitle: string;
+  answers: Answer[];
 
   constructor(private route: ActivatedRoute,
               private quizService: QuizService,
               private questionService: QuestionService,
               private quizParamsService: QuizParamsService,
+              private answerService: AnswerService,
               private dialog: MatDialog,
               protected router: Router
               ) {
@@ -43,12 +47,19 @@ export class QuestionsComponent extends AbstractAdminComponent {
     ).subscribe(data => this.questionPage = data);
   }
 
-  fetchData() {
+  fetchQuestions() {
     this.questionService.getQuestions(this.quizId).subscribe(data => this.questionPage = data);
   }
 
+  fetchAnswers(questionId: number) {
+    this.answerService.getAnswer(this.quizId, questionId).subscribe(data => {
+      console.log(data);
+      this.answers = data;
+    });
+  }
+
   addQuestion(content: string) {
-    this.questionService.saveQuestion(this.quizId, content).subscribe(() => this.fetchData());
+    this.questionService.saveQuestion(this.quizId, content).subscribe(() => this.fetchQuestions());
   }
 
   openDialog(): void {

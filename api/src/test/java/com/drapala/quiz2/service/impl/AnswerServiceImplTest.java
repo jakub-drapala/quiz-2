@@ -9,9 +9,9 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -29,9 +29,9 @@ public class AnswerServiceImplTest {
 
     @Test
     public void getByQuestionIdTest() {
-        Page<Answer> answers = AnswerProvider.getPage();
-        when(answerRepository.getAllByQuestion_Id(anyLong(), any(Pageable.class))).thenReturn(answers);
-        assertEquals(answerService.getByQuestionId(1L, Pageable.unpaged()), answers);
-        verify(answerRepository, times(1)).getAllByQuestion_Id(anyLong(), any(Pageable.class));
+        List<Answer> answers = AnswerProvider.getAnswers();
+        when(answerRepository.getAllByQuestion_Id(anyLong())).thenReturn(answers);
+        assertEquals(answerService.getByQuestionId(1L), answers);
+        verify(answerRepository, times(1)).getAllByQuestion_Id(anyLong());
     }
 }
