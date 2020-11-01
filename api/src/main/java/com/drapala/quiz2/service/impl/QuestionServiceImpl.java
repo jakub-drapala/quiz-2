@@ -26,7 +26,12 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public Page<Question> get(long id, Pageable page) {
+    public Question getById(long id) {
+        return questionRepository.findById(id).orElseThrow();
+    }
+
+    @Override
+    public Page<Question> getAll(long id, Pageable page) {
         return questionRepository.findAllByQuiz_Id(id, page);
     }
 
@@ -35,6 +40,11 @@ public class QuestionServiceImpl implements QuestionService {
     public Question add(Question question, Long quizId) {
         var quiz = quizRepository.findById(quizId).orElseThrow(() -> new ResourceNotFoundException(QUIZ_NOT_FOUND));
         question.setQuiz(quiz);
+        return questionRepository.save(question);
+    }
+
+    @Override
+    public Question update(Question question) {
         return questionRepository.save(question);
     }
 }

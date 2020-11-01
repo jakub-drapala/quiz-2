@@ -10,10 +10,7 @@ public class Answer {
     private long id;
 
     private String content;
-    private boolean isCorrect;
-
-    @ManyToOne
-    private Question question;
+    private boolean correct;
 
     public Answer() {
     }
@@ -35,18 +32,10 @@ public class Answer {
     }
 
     public boolean isCorrect() {
-        return isCorrect;
+        return correct;
     }
 
     public void setCorrect(boolean correct) {
-        isCorrect = correct;
-    }
-
-    public Question getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(Question question) {
-        this.question = question;
+        this.correct = correct;
     }
 }

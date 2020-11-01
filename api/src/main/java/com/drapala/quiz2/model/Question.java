@@ -21,11 +21,14 @@ public class Question {
     @ManyToOne
     private Quiz quiz;
 
-    @JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "question")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Answer> answers;
 
     public Question() {
+    }
+
+    public void addAnswer(Answer answer) {
+        answers.add(answer);
     }
 
     public long getId() {

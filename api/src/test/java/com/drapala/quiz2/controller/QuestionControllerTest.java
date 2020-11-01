@@ -42,12 +42,12 @@ public class QuestionControllerTest extends BaseControllerTest {
 
     @Test
     public void getTest() throws Exception {
-        when(questionService.get(eq(1L), any(Pageable.class))).thenReturn(QuestionProvider.getPage());
+        when(questionService.getAll(eq(1L), any(Pageable.class))).thenReturn(QuestionProvider.getPage());
         api.perform(get("/quizzes/{quizId}/questions", 1L).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.totalElements", Matchers.is(2)))
                 .andExpect(jsonPath("$.content[1].content", Matchers.is("Content 2")));
-        Mockito.verify(questionService).get(anyLong(), any(Pageable.class));
+        Mockito.verify(questionService).getAll(anyLong(), any(Pageable.class));
     }
 
     @Test

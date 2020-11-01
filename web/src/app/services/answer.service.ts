@@ -15,4 +15,12 @@ export class AnswerService {
   getAnswer(quizId: number, questionId: number): Observable<any> {
     return this.httpClient.get<Answer[]>(this.baseUrl + quizId + '/questions/' + questionId + '/answers');
   }
+
+  addAnswer(quizId: number, questionId: number, answer: Answer): Observable<any> {
+    return this.httpClient.post<any>(this.baseUrl + quizId + '/questions/' + questionId + '/answers', answer);
+  }
+
+  updateAnswer(quizId: number, questionId: number, answer: Answer): Observable<any> {
+    return this.httpClient.put(this.baseUrl + quizId + '/questions/' + questionId + '/answers/' + answer.id, answer);
+  }
 }

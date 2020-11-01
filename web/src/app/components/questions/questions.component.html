@@ -4,7 +4,7 @@
       {{ quizTitle }}
     </div>
     <div>
-      <button mat-raised-button (click)="openDialog()">Zmień nazwę</button>
+      <button mat-raised-button (click)="openChangeNameDialog()">Zmień nazwę</button>
     </div>
   </div>
 
@@ -25,8 +25,29 @@
       </div>
     </div>
   </form>
-  <ul *ngFor="let answer of answers">
-    <li>{{ answer.content }}</li>
-  </ul>
+  <hr/>
+  <div *ngIf="focusedQuestionId" style="margin-top: 30px;">
+    <ul *ngFor="let answer of answers">
+      <li style="display: flex; justify-content: space-between;">
+        {{ answer.content }}
+        <mat-checkbox class="example-margin" color="primary" [checked]="answer.correct" (change)="updateAnswer(answer, $event)">Prawda</mat-checkbox>
+      </li>
+    </ul>
+    <form (ngSubmit)="addAnswer(answer.value)">
+      <div style="display: flex; justify-content: space-between">
+        <div>
+          <label for="answer" style="margin-right: 20px">Odpowiedź</label>
+          <input #answer type="text" id="answer">
+        </div>
+        <div>
+          <button mat-raised-button type="submit">Dodaj</button>
+        </div>
+      </div>
+    </form>
+    <hr/>
+    <div style="margin-left: auto; margin-right: auto; text-align: center">
+      <button mat-raised-button color="accent" (click)="openClientsFormDialog()">Generuj</button>
+    </div>
+  </div>
 </div>
 

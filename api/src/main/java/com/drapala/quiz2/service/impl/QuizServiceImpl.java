@@ -22,6 +22,11 @@ public class QuizServiceImpl implements QuizService {
     }
 
     @Override
+    public Quiz getById(long id) {
+        return quizRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(QUIZ_NOT_FOUND));
+    }
+
+    @Override
     public Page<Quiz> get(Pageable pageable) {
         return quizRepository.findAll(pageable);
     }

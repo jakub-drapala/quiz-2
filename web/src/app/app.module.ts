@@ -21,6 +21,9 @@ import { LoginFormComponent } from './common/form/login-form/login-form.componen
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './components/login/login.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { QuestionsClientsFormDialogComponent } from './components/questions/questions-clients-form-dialog/questions-clients-form-dialog.component';
+import { QuestionsGeneratedDialogComponent } from './components/questions/questions-generated-dialog/questions-generated-dialog.component';
 
 const appRoute = [
   { path: '', redirectTo: 'admin/quizzes', pathMatch: 'full' },
@@ -36,24 +39,27 @@ const appRoute = [
     QuestionsComponent,
     QuestionChangeNameDialogComponent,
     LoginFormComponent,
-    LoginComponent
+    LoginComponent,
+    QuestionsClientsFormDialogComponent,
+    QuestionsGeneratedDialogComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoute),
-    FormsModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatListModule,
-    MatButtonModule,
-    MatDialogModule,
-    CommonModule,
-    ReactiveFormsModule,
-    MatCardModule,
-    MatInputModule,
-    ToastrModule.forRoot()
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        RouterModule.forRoot(appRoute),
+        FormsModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        MatListModule,
+        MatButtonModule,
+        MatDialogModule,
+        CommonModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        MatInputModule,
+        ToastrModule.forRoot(),
+        MatCheckboxModule
+    ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     QuizParamsService

@@ -24,7 +24,7 @@ public class QuestionController {
 
     @GetMapping("/questions")
     public Page<Question> get(@PathVariable Long quizId, @PageableDefault Pageable page) {
-        return service.get(quizId, page);
+        return service.getAll(quizId, page);
     }
 
     @PostMapping("/questions")

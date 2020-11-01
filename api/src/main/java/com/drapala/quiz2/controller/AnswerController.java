@@ -3,11 +3,7 @@ package com.drapala.quiz2.controller;
 import com.drapala.quiz2.model.Answer;
 import com.drapala.quiz2.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,7 +19,17 @@ public class AnswerController {
     }
 
     @GetMapping("/answers")
-    List<Answer> getByQuestionId(@PathVariable Long quizId, @PathVariable Long questionId) {
+    public List<Answer> getByQuestionId(@PathVariable Long quizId, @PathVariable Long questionId) {
         return answerService.getByQuestionId(questionId);
+    }
+
+    @PostMapping("/answers")
+    public List<Answer> add(@PathVariable Long quizId, @PathVariable Long questionId, @RequestBody Answer answer) {
+        return answerService.add(quizId, questionId, answer);
+    }
+
+    @PutMapping("/answers/{answerId}")
+    public void update(@PathVariable Long answerId, @RequestBody Answer answer) {
+        answerService.update(answer);
     }
 }

@@ -4,7 +4,6 @@ import com.drapala.quiz2.Quiz2Application;
 import com.drapala.quiz2.model.Question;
 import com.drapala.quiz2.repository.QuestionRepository;
 import com.drapala.quiz2.repository.QuizRepository;
-import com.drapala.quiz2.service.impl.QuestionServiceImpl;
 import com.drapala.quiz2.testData.QuestionProvider;
 import com.drapala.quiz2.testData.QuizProvider;
 import org.junit.Test;
@@ -42,7 +41,7 @@ public class QuestionServiceImplTest {
     public void getTest() {
         Page<Question> questionPage = QuestionProvider.getPage();
         when(questionRepository.findAllByQuiz_Id(anyLong(), any(Pageable.class))).thenReturn(questionPage);
-        questionService.get(1L, Pageable.unpaged());
+        questionService.getAll(1L, Pageable.unpaged());
         verify(questionRepository, times(1)).findAllByQuiz_Id(anyLong(), any(Pageable.class));
     }
 

@@ -11,6 +11,8 @@ import {QuestionChangeNameDialogComponent} from './question-change-name-dialog/q
 import {AbstractAdminComponent} from '../../abstract/abstract-admin.component';
 import {AnswerService} from '../../services/answer.service';
 import {Answer} from '../../common/model/answer';
+import {QuestionsClientsFormDialogComponent} from './questions-clients-form-dialog/questions-clients-form-dialog.component';
+import {QuestionsGeneratedDialogComponent} from './questions-generated-dialog/questions-generated-dialog.component';
 
 @Component({
   selector: 'app-questions',
@@ -23,6 +25,7 @@ export class QuestionsComponent extends AbstractAdminComponent {
   quizId: number;
   quizTitle: string;
   answers: Answer[];
+  focusedQuestionId: number;
 
   constructor(private route: ActivatedRoute,
               private quizService: QuizService,
@@ -55,6 +58,7 @@ export class QuestionsComponent extends AbstractAdminComponent {
     this.answerService.getAnswer(this.quizId, questionId).subscribe(data => {
       console.log(data);
       this.answers = data;
+      this.focusedQuestionId = questionId;
     });
   }
 
@@ -62,7 +66,21 @@ export class QuestionsComponent extends AbstractAdminComponent {
     this.questionService.saveQuestion(this.quizId, content).subscribe(() => this.fetchQuestions());
   }
 
-  openDialog(): void {
+  addAnswer(answer: string) {
+    this.answerService.addAnswer(this.quizId, this.focusedQuestionId, { id: null, content: answer, correct: false } )
+      .subscribe(data => this.answers = data);
+  }
+
+  updateAnswer(answer: Answer, e) {
+    answer.correct = e.checked;
+    this.answerService.updateAnswer(this.quizId, this.focusedQuestionId, answer).subscribe();
+  }
+
+  getAnswerValue(answer: Answer) {
+    console.log(answer);
+  }
+
+  openChangeNameDialog(): void {
     const dialogRef = this.dialog.open(QuestionChangeNameDialogComponent, {
       width: '250px',
       data: {
@@ -76,4 +94,26 @@ export class QuestionsComponent extends AbstractAdminComponent {
       }
     });
   }
+
+  openClientsFormDialog(): void {
+    const dialogRef = this.dialog.open(QuestionsClientsFormDialogComponent, {
+      width: '250px',
+      data: {
+        quizId: this.quizId
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.openResultDialog(result.result);
+    });
+  }
+
+  openResultDialog(formUid: string) {
+    this.dialog.open(QuestionsGeneratedDialogComponent, {
+      width: '500px',
+      data: {
+        uid: formUid
+      }
+    });
+  }
+
 }

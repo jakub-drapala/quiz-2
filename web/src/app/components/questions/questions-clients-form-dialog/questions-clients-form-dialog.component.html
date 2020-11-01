@@ -1,0 +1,12 @@
+<div mat-dialog-content style="background: #F5F5F5">
+  <h4 style="text-align: center; font-weight: 500;">Generuj</h4>
+  <form>
+    <input type="text" placeholder="Imię i nazwisko" #name>
+    <input type="number" placeholder="Ilość pytań" #amountQuestions>
+    <input type="number" placeholder="Czas w sekundach">
+    <div mat-dialog-actions class="row justify-content-around">
+      <button type="submit" mat-raised-button color="primary" (click)="submitForm(name.value, amountQuestions.valueAsNumber)">Zatwierdź</button>
+      <button mat-raised-button color="primary" (click)="close()">Anuluj</button>
+    </div>
+  </form>
+</div>

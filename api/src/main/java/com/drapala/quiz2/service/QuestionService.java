@@ -6,7 +6,11 @@ import org.springframework.data.domain.Pageable;
 
 public interface QuestionService {
 
-    Page<Question> get(long id, Pageable page);
+    Question getById(long id);
+
+    Page<Question> getAll(long id, Pageable page);
 
     Question add(Question question, Long quizId);
+
+    Question update(Question question);
 }
