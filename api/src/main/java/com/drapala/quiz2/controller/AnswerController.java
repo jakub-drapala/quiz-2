@@ -3,6 +3,7 @@ package com.drapala.quiz2.controller;
 import com.drapala.quiz2.model.Answer;
 import com.drapala.quiz2.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,11 +25,13 @@ public class AnswerController {
     }
 
     @PostMapping("/answers")
+    @ResponseStatus(HttpStatus.CREATED)
     public List<Answer> add(@PathVariable Long quizId, @PathVariable Long questionId, @RequestBody Answer answer) {
         return answerService.add(quizId, questionId, answer);
     }
 
     @PutMapping("/answers/{answerId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@PathVariable Long answerId, @RequestBody Answer answer) {
         answerService.update(answer);
     }

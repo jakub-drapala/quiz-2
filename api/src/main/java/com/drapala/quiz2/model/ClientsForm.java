@@ -3,11 +3,9 @@ package com.drapala.quiz2.model;
 import com.drapala.quiz2.request.ClientsFormRequest;
 import com.google.common.hash.Hashing;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @Entity
 public class ClientsForm {
@@ -19,6 +17,8 @@ public class ClientsForm {
     private int timeInSec;
     @OneToOne(fetch = FetchType.LAZY)
     private Quiz quiz;
+    @OneToMany(mappedBy = "clientsForm")
+    private List<ClientsQuestion> clientsQuestions;
 
     public ClientsForm() {
     }
@@ -26,6 +26,7 @@ public class ClientsForm {
     public static ClientsForm of(ClientsFormRequest clientsFormRequest) {
         var clientsForm = new ClientsForm();
         clientsForm.setClientsName(clientsFormRequest.getClientsName());
+        clientsForm.setQuestionsAmount(clientsFormRequest.getQuestionsAmount());
         clientsForm.setUid(generateUid(clientsFormRequest.getClientsName()));
         return clientsForm;
     }
@@ -34,6 +35,10 @@ public class ClientsForm {
         return Hashing
                 .sha256()
                 .hashString(System.currentTimeMillis() + clientsName, StandardCharsets.UTF_8).toString();
+    }
+
+    public void addQuestion(ClientsQuestion question) {
+        clientsQuestions.add(question);
     }
 
     public String getUid() {
@@ -74,5 +79,13 @@ public class ClientsForm {
 
     public void setQuiz(Quiz quiz) {
         this.quiz = quiz;
+    }
+
+    public List<ClientsQuestion> getClientsQuestions() {
+        return clientsQuestions;
+    }
+
+    public void setClientsQuestions(List<ClientsQuestion> clientsQuestions) {
+        this.clientsQuestions = clientsQuestions;
     }
 }

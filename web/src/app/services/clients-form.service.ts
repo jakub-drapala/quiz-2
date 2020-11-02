@@ -13,6 +13,7 @@ export class ClientsFormService {
   constructor(private httpClient: HttpClient) { }
 
   create(clientsForm: ClientsForm): Observable<any> {
+    console.log(clientsForm);
     return this.httpClient.post(this.baseUrl + 'admin/quiz', clientsForm);
   }
 }

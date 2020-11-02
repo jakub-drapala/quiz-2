@@ -24,12 +24,14 @@ import { LoginComponent } from './components/login/login.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { QuestionsClientsFormDialogComponent } from './components/questions/questions-clients-form-dialog/questions-clients-form-dialog.component';
 import { QuestionsGeneratedDialogComponent } from './components/questions/questions-generated-dialog/questions-generated-dialog.component';
+import { ClientsQuizComponent } from './components/clients-quiz/clients-quiz.component';
 
 const appRoute = [
   { path: '', redirectTo: 'admin/quizzes', pathMatch: 'full' },
   { path: 'admin/quizzes', component: QuizzesComponent },
   { path: 'admin/quizzes/:quizId', component: QuestionsComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'quiz', component: ClientsQuizComponent}
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const appRoute = [
     LoginFormComponent,
     LoginComponent,
     QuestionsClientsFormDialogComponent,
-    QuestionsGeneratedDialogComponent
+    QuestionsGeneratedDialogComponent,
+    ClientsQuizComponent
   ],
     imports: [
         BrowserModule,

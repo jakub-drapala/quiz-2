@@ -56,7 +56,6 @@ export class QuestionsComponent extends AbstractAdminComponent {
 
   fetchAnswers(questionId: number) {
     this.answerService.getAnswer(this.quizId, questionId).subscribe(data => {
-      console.log(data);
       this.answers = data;
       this.focusedQuestionId = questionId;
     });

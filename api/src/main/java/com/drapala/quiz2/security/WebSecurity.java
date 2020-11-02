@@ -24,7 +24,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     private final String[] WHITELIST = {
             "/login",
-            "/quizzes"
+            "/quizzes",
+            "/quiz/*",
+            "/quiz"
     };
 
     private final UserDetailsServiceImpl userDetailsService;

@@ -8,6 +8,7 @@ public class ResourceNotFoundException extends RuntimeException {
 
     public static final String QUIZ_NOT_FOUND = "Quiz not found";
     public static final String QUESTION_NOT_FOUND = "Question not found";
+    public static final String INVALID_UID = "Invalid quiz uid";
 
     public ResourceNotFoundException(String message) {
         super(message);

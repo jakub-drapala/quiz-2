@@ -12,7 +12,7 @@ export class QuestionsGeneratedDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<QuestionsGeneratedDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data,
-  ) { this.url = 'localhost:8080/quiz?uid=' + data.uid; }
+  ) { this.url = 'localhost:4200/quiz?uid=' + data.uid; }
 
   ngOnInit(): void {
   }
